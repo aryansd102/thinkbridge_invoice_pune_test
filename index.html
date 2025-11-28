@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoice Creator</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <h1>Invoice Creator</h1>
+
+    <div class="container">
+
+        <div class="form-container">
+            <h2>Enter Details</h2>
+
+            <label>Customer Name:</label>
+            <input type="text" id="customerName">
+
+            <label>Invoice Date:</label>
+            <input type="date" id="invoiceDate">
+
+            <h3>Add Items</h3>
+            <div class="item-row">
+                <input type="text" id="itemName" placeholder="Item Name">
+                <input type="number" id="itemQty" placeholder="Qty">
+                <input type="number" id="itemPrice" placeholder="Price">
+                <button onclick="addItem()">Add</button>
+            </div>
+
+            <button class="generate-btn" onclick="generateInvoice()">Generate Invoice</button>
+        </div>
+
+        <div class="invoice-preview">
+            <h2>Invoice</h2>
+
+            <p><strong>Customer:</strong> <span id="prevCustomer"></span></p>
+            <p><strong>Date:</strong> <span id="prevDate"></span></p>
+
+            <table id="invoiceTable">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
+            <h3 class="grand-total">Grand Total: ₹<span id="grandTotal">0</span></h3>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
